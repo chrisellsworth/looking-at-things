@@ -14,22 +14,22 @@
 #   }
 #
 ActiveRecord::Base.configurations[:development] = {
-  :adapter   => 'postgresql',
-  :database  => 'looking_at_things_development',
-  :username  => 'root',
-  :password  => '',
-  :host      => 'localhost',
-  :port      => 5432
+  adapter: 'postgresql',
+  database: 'looking_at_things_development',
+  username: 'root',
+  password: '',
+  host: 'localhost',
+  port: 5432
 
 }
 
 ActiveRecord::Base.configurations[:test] = {
-  :adapter   => 'postgresql',
-  :database  => 'looking_at_things_test',
-  :username  => 'root',
-  :password  => '',
-  :host      => 'localhost',
-  :port      => 5432
+  adapter: 'postgresql',
+  database: 'looking_at_things_test',
+  username: 'root',
+  password: '',
+  host: 'localhost',
+  port: 5432
 
 }
 

@@ -28,9 +28,9 @@
 Padrino.configure_apps do
   # enable :sessions
   set :session_secret, '12f084bc94dccc86044c9cf55fd315fe2dd28bb2ee47d5e9cc67774e4f57ac8a'
-  set :protection, :except => :path_traversal
+  set :protection, except: :path_traversal
   set :protect_from_csrf, true
 end
 
 # Mounts the core application for this project
-Padrino.mount('LookingAtThings::App', :app_file => Padrino.root('app/app.rb')).to('/')
+Padrino.mount('LookingAtThings::App', app_file: Padrino.root('app/app.rb')).to('/')

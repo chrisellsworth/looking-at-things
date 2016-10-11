@@ -1,6 +1,6 @@
 require 'json'
 
-Dir["db/data/*"].each do |path|
+Dir['db/data/*'].each do |path|
   puts path
   json = JSON.parse(File.read(path))
   json['posts'].each do |post|

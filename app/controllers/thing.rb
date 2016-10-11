@@ -1,14 +1,14 @@
 LookingAtThings::App.controllers :thing do
   get '/:thing' do |thing|
     content_type :json
-    Thing.where('summary ilike ?', "looking at %#{thing}%").to_json
+    Thing.where('summary ilike ?', "%#{thing}%").to_json
   end
 
   post '/slack' do
     content_type :json
 
     query = params['text']
-    thing = Thing.where('summary ilike ?', "looking at %#{query}%").first
+    thing = Thing.where('summary ilike ?', "looking at %#{query}").order("RANDOM()").first
 
     if thing
       {

@@ -12,6 +12,7 @@ LookingAtThings::App.controllers :thing do
 
     if thing
       {
+        response_type: "in_channel",
         attachments: [
           text: thing.summary,
           image_url: thing.image_url

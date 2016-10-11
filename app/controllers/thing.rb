@@ -1,7 +1,7 @@
 LookingAtThings::App.controllers :thing do
   get '/:thing' do |thing|
     content_type :json
-    Thing.where('summary ilike ?', "%#{thing}%").to_json
+    Thing.where('summary ilike ?', "%#{thing}%").pluck(:summary, :image_url).to_json
   end
 
   post '/slack' do

@@ -3,4 +3,24 @@ LookingAtThings::App.controllers :thing do
     content_type :json
     Thing.where('summary ilike ?', "looking at %#{thing}%").to_json
   end
+
+  post '/slack' do
+    content_type :json
+
+    query = params['text']
+    thing = Thing.where('summary ilike ?', "looking at %#{query}%").first
+
+    if thing
+      {
+        attachments: [
+          text: thing.summary,
+          image_url: thing.image_url
+        ]
+      }.to_json
+    else
+      {
+        text: "There is no #{query} to look at."
+      }.to_json
+    end
+  end
 end

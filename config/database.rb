@@ -23,16 +23,6 @@ ActiveRecord::Base.configurations[:development] = {
 
 }
 
-ActiveRecord::Base.configurations[:production] = {
-  :adapter   => 'postgresql',
-  :database  => 'looking_at_things_production',
-  :username  => 'root',
-  :password  => '',
-  :host      => 'localhost',
-  :port      => 5432
-
-}
-
 ActiveRecord::Base.configurations[:test] = {
   :adapter   => 'postgresql',
   :database  => 'looking_at_things_test',

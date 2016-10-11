@@ -8,7 +8,7 @@ LookingAtThings::App.controllers :thing do
     content_type :json
 
     query = params['text']
-    thing = Thing.where('summary ilike ?', "looking at %#{query}").order("RANDOM()").first
+    thing = Thing.where('summary ilike ?', "looking at %#{query}%").order("RANDOM()").first
 
     if thing
       {

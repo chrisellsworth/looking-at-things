@@ -1,6 +1,6 @@
 class Thing < ActiveRecord::Base
   def self.matching(query)
-    Thing.where('summary ilike ?', "looking at %#{query}%").order('RANDOM()').first
+    Thing.where('summary ilike ?', "%#{query}%").order('RANDOM()').first
   end
 
   def self.any
